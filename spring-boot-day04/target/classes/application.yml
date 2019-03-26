@@ -1,0 +1,21 @@
+name: fza
+server:
+  port: 8081
+spring:
+  profiles:
+    active: dev
+management:
+  security:
+    enabled: true
+  port: 8888
+  context-path: /abc
+  
+security:
+  user:
+    name: admin
+    password: admin
+    
+info:
+   app:
+      name: spring-boot-actuator
+      version: 1.0.0

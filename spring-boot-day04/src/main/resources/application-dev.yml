@@ -1,0 +1,16 @@
+my:
+ age: 23
+ number:  ${random.int[100,999]}
+ uuid: ${random.uuid}
+ max: ${random.int(10)} #10天以内的随机数
+ value: ${random.value}
+ greeting: Hi,I'm  ${my.name}
+ 
+ 
+     
+     
+     
+     
+     
+     
+
