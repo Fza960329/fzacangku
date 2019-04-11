@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</head>
+<body>
+hello world!
+
+<form th:action="@{/login}" method="post">       
+	  <div th:if="${param.error !=null}">请输入正确的用户名和密码</div>
+	  
+	<p>
+		<label for="username">Username</label>
+		<input th:type="text" id="username" name="username"/>	
+	</p >
+	<p>
+		<label for="password">Password</label>
+		<input th:type="password" id="password" name="password"/>	
+	</p >
+	<input th:type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+	<button th:type="submit" class="btn">Log in</button>
+</form>
+
+</body>
+</html>
