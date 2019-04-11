@@ -1,4 +1,4 @@
-package com.example.demo.config;
+/*package com.example.demo.config;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -23,13 +23,22 @@ public class Config extends WebSecurityConfigurerAdapter {
 		protected void configure(HttpSecurity http) throws Exception {
 			http
 				.authorizeRequests()
-					.anyRequest().authenticated()
+				.antMatchers("/resources/**","/signup","/about").permitAll()
+				.antMatchers("/admin/**").hasRole("ADMIN")
+				.antMatchers("/db/**").access("hasRole('ADMIN') and hasRole('DBA')")
+				.anyRequest().authenticated()
+				.and()
+				.formLogin();
+			
+			http
+			    .authorizeRequests()
+				.anyRequest().authenticated()
 					.and()
 					.formLogin()
 					.loginPage("/loginP") 
 					.successForwardUrl("/index")
-					.permitAll();        
+					.permitAll();      
 			
 		}
 	}
-
+	*/

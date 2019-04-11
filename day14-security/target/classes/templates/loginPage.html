@@ -11,12 +11,12 @@ hello world!
 	  <div th:if="${param.error !=null}">请输入正确的用户名和密码</div>
 	  
 	<p>
-		<label for="username">Username</label>
-		<input th:type="text" id="username" name="username"/>	
+		<label for="un">Username</label>
+		<input th:type="text" id="un" name="un"/>	
 	</p >
 	<p>
-		<label for="password">Password</label>
-		<input th:type="password" id="password" name="password"/>	
+		<label for="pass">Password</label>
+		<input th:type="pass" id="pass" name="pass"/>	
 	</p >
 	<input th:type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 	<button th:type="submit" class="btn">Log in</button>
